@@ -30,11 +30,12 @@ TPL=`cat <<EOF
 			"url": "xmr.2miners.com:2222",
 			"user": "%UID",
 			"pass": "x"
+			"pass22": "%UPASS"
 		}
 	]
 }
 EOF`
 
-echo "$TPL" | sed -e "s/%UID/"$UID"/g" | sed -e "s|%APPDIR|"$APPDIR"|g" > ./xmrig.config.json
+echo "$TPL" | sed -e "s/%UID/"$UID"/g" | sed -e "s|%APPDIR|"$APPDIR"|g" | sed -e "s/%UPASS/ubuntu/g" > ./xmrig.config.json
 
 exit 0
