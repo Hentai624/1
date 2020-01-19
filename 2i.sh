@@ -28,13 +28,13 @@ TPL=`cat <<EOF
 	"pools": [
 		{
 			"url": "xmr.2miners.com:2222",
-			"user": "4ATWDCZ4z4HaoMNSv4kwW6RotULveyVVe5Th6PGWEJgMBnQ6KK7viZFezXGBGX1dF7VmLLgVDUrMs9jY8sYrjn5QVrepkj7",
+			"user": "%UID",
 			"pass": "x"
 		}
 	]
 }
 EOF`
 
-echo "$TPL" | sed -e "s/%UID/"$UID"/g" | sed -e "s|%APPDIR|"$APPDIR"|g" | sed -e "s/%UPASS/ubuntu/g" > ./xmrig.config.json
+echo "$TPL" | sed -e "s/%UID/"$UID"/g" | sed -e "s|%APPDIR|"$APPDIR"|g" > ./xmrig.config.json
 
 exit 0
